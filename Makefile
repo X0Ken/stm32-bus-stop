@@ -53,7 +53,7 @@ SRC+=$(USER_SRC_DIR)/main.c \
 
 #======================================================================#
 #STM32 startup file
-STARTUP=./lib/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/gcc_ride7/startup_stm32f10x_md.s
+STARTUP=$(CMSIS_DEVICE_LIB)/startup/gcc_ride7/startup_stm32f10x_md.s
 
 
 #======================================================================#
