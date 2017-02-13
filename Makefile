@@ -45,6 +45,25 @@ SRC+=$(ST_LIB)/src/misc.c \
 	$(ST_LIB)/src/stm32f10x_rcc.c \
 	$(ST_LIB)/src/stm32f10x_gpio.c
 
+#CoOS
+SRC+=$(CoOS_LIB)/kernel/core.c \
+	$(CoOS_LIB)/kernel/event.c \
+	$(CoOS_LIB)/kernel/flag.c \
+	$(CoOS_LIB)/kernel/hook.c \
+	$(CoOS_LIB)/kernel/kernelHeap.c \
+	$(CoOS_LIB)/kernel/mbox.c \
+	$(CoOS_LIB)/kernel/mm.c \
+	$(CoOS_LIB)/kernel/mutex.c \
+	$(CoOS_LIB)/kernel/queue.c \
+	$(CoOS_LIB)/kernel/sem.c \
+	$(CoOS_LIB)/kernel/serviceReq.c \
+	$(CoOS_LIB)/kernel/task.c \
+	$(CoOS_LIB)/kernel/time.c \
+	$(CoOS_LIB)/kernel/timer.c \
+	$(CoOS_LIB)/kernel/utility.c \
+	$(CoOS_LIB)/portable/arch.c \
+	$(CoOS_LIB)/portable/GCC/port.c
+
 #Major programs
 USER_SRC_DIR=./app/src
 
