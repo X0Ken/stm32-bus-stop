@@ -1,4 +1,4 @@
-#include "speak.h"
+#include "uart.h"
 #include "stm32f10x_usart.h"
 
 void UART2_GPIO_Configuration(void) {
@@ -78,22 +78,34 @@ void USART2_Configuration(void) {
   USART_Cmd(USART2, ENABLE);                     // USART2总开关：开启
 }
 
-int fputc(int ch, FILE *f) {
+void UART2SendByte(uint8_t ch) {
   /* 发送一个字节数据到USART2 */
   USART_SendData(USART2, (uint8_t)ch);
 
   /* 等待发送完毕 */
   while (USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET)
     ;
-
-  return (ch);
 }
 
 /// 重定向c库函数scanf到USART2
-int fgetc(FILE *f) {
+char UART2GetByte() {
   /* 等待串口1输入数据 */
   while (USART_GetFlagStatus(USART2, USART_FLAG_RXNE) == RESET)
     ;
 
-  return (int)USART_ReceiveData(USART2);
+  return (char)USART_ReceiveData(USART2);
+}
+
+/************************************************************************
+功能描述： 串口发送字符串数据
+入口参数： 	*DAT：字符串指针
+返 回 值： none
+其他说明： API 供外部使用，直观！
+**************************************************************************/
+void UART2SendString(char *data,uint8_t len)
+{
+	for(uint8_t i=0;i<len;i++)
+	{
+	 	UART2SendByte(data[i]);
+	}
 }
