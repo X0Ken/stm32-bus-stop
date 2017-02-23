@@ -43,6 +43,7 @@ SRC=$(CMSIS_DEVICE_LIB)/system_stm32f10x.c
 #StdPeriph
 SRC+=$(ST_LIB)/src/misc.c \
 	$(ST_LIB)/src/stm32f10x_rcc.c \
+	$(ST_LIB)/src/stm32f10x_usart.c \
 	$(ST_LIB)/src/stm32f10x_gpio.c
 
 #CoOS
@@ -68,7 +69,8 @@ SRC+=$(CoOS_LIB)/kernel/core.c \
 USER_SRC_DIR=./app/src
 
 SRC+=$(USER_SRC_DIR)/main.c \
-  $(USER_SRC_DIR)/led.c
+	$(USER_SRC_DIR)/led.c \
+	$(USER_SRC_DIR)/speak.c
 
 #======================================================================#
 #STM32 startup file
