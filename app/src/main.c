@@ -6,8 +6,7 @@
 #include <CoOS.h>
 #include <stm32f10x.h>
 
-#define TASK_STK_SIZE 128        /*!< Define stack size.                       \
-                                    */
+#define TASK_STK_SIZE 128        /*!< Define stack size. */
 OS_STK led_Stk[TASK_STK_SIZE];   /*!< Stack of 'task_init' task.	  */
 OS_STK speak_Stk[TASK_STK_SIZE]; /*!< Stack of 'task_init' task.	  */
 
