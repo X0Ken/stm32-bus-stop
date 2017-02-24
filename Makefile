@@ -10,7 +10,7 @@ OBJCOPY=arm-none-eabi-objcopy
 
 #======================================================================#
 #Flags
-CFLAGS=-Wall -g -mlittle-endian -mthumb -nostdlib -ffreestanding 
+CFLAGS=-Wall -g -mlittle-endian -mthumb -nostdlib -ffreestanding
 CFLAGS+=-mcpu=cortex-m3
 CFLAGS+=-D USE_STDPERIPH_DRIVER
 CFLAGS+=-D STM32F10X_MD
@@ -71,7 +71,8 @@ USER_SRC_DIR=./app/src
 SRC+=$(USER_SRC_DIR)/main.c \
 	$(USER_SRC_DIR)/led.c \
 	$(USER_SRC_DIR)/uart.c \
-	$(USER_SRC_DIR)/SYN6288.c
+	$(USER_SRC_DIR)/SYN6288.c \
+	$(USER_SRC_DIR)/gpio.c
 
 #======================================================================#
 #STM32 startup file

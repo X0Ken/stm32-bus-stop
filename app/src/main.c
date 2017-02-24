@@ -1,6 +1,7 @@
 #include "OSConfig.h"
 #include "led.h"
 #include "uart.h"
+#include "gpio.h"
 #include "SYN6288.h"
 #include <CoOS.h>
 #include <stm32f10x.h>
@@ -22,7 +23,7 @@ void speak_task(void *pdata);
 int main(void) {
   LED_Init();
   LED_Sets(0x00);
-  UART2_GPIO_Configuration();
+  GPIO_Configuration();
   USART2_Configuration();
   CoInitOS();
   CoCreateTask(led_task, (void *)0, 10, &led_Stk[TASK_STK_SIZE - 1],

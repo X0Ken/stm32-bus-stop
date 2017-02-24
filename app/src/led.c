@@ -1,3 +1,4 @@
+#include <stm32f10x.h>
 #include "led.h"
 
 
@@ -10,7 +11,7 @@ void LED_Init(void)
 
 	RCC_APB2PeriphClockCmd(RCC_LED, ENABLE);
 
-	GPIO_Init(GPIO_LED, &GPIO_InitStructure);	 
+	GPIO_Init(GPIO_LED, &GPIO_InitStructure);
 
 }
 
