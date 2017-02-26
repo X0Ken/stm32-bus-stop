@@ -10,7 +10,7 @@ OBJCOPY=arm-none-eabi-objcopy
 
 #======================================================================#
 #Flags
-CFLAGS=-Wall -g -mlittle-endian -mthumb -nostdlib -ffreestanding
+CFLAGS=-Wall -mlittle-endian -mthumb -std=c11 --specs=nosys.specs
 CFLAGS+=-mcpu=cortex-m3
 CFLAGS+=-D USE_STDPERIPH_DRIVER
 CFLAGS+=-D STM32F10X_MD

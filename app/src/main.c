@@ -45,11 +45,11 @@ void led_task(void *pdata) {
 
 void speak_task(void *pdata) {
   while (1) {
-		UART2SendString(a, 14);
-		Delay(10);
-		utf8_to_unicode((unsigned char *)"笨蛋", unicstr);
+		// UART2SendString(a, 14);
+		// Delay(10);
+		utf8_to_unicode((unsigned char *)"大望路到了，请从后门下车！欢迎下次乘坐。", unicstr);
     SYN_FrameInfo(1, (char *)unicstr);
-    Delay(10);
+    Delay(20);
   }
 }
 

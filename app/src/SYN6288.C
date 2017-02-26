@@ -11,6 +11,7 @@
 **  说明：。。
 **************************飞音云电子******************************/
 #include "uart.h"
+#include <string.h>
 
 /**************芯片设置命令*********************/
 uint8_t SYN_StopCom[] = {0xFD, 0X00, 0X02, 0X02, 0XFD};    //停止合成
@@ -22,21 +23,6 @@ uint8_t SYN_PowerDownCom[] = {0XFD, 0X00, 0X02, 0X88,
 
 /***********************************************/
 
-
-char strlen(char *str){
-	int i=0;
-	while (str[i] != 0) {
-		i++;
-	}
-	return i;
-}
-
-void memcpy(char *dist, char *src, int len) {
-	for (int i = 0; i < len; i++) {
-		dist[i] = src[i];
-	}
-	dist[len] = 0;
-}
 
 /***********************************************************
 * 名    称：  YS-SYN6288 文本合成函数

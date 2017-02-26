@@ -1,7 +1,7 @@
 #ifndef __UART_H_
 #define __UART_H_
 
-
+#include "stdint.h"
 
 void UART2_GPIO_Configuration(void);
 void USART2_Configuration(void);
